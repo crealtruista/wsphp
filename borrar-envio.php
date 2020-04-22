@@ -39,18 +39,17 @@
         </form>
         
     <?php
-        require_once('inc/funciones/nusoap.php');
+    //requerimos la libreria nusoap para manejo de webservice con php
+    require_once('inc/funciones/nusoap.php');
 	    if(isset($_POST["submit"]) && !empty($_POST["submit"])) {
-
-        //capturar parametros
+        //captura de parametros
 		$usuario = $_POST["usuario"];
         $pass = $_POST["pass"];
         $albaran = $_POST["albaran"];
 
-           //url del webservice
-    $wsdl="http://www3.ubilop.com:8081/factws/IntegraCF.asmx?wsdl";
-    
-    
+    //url donde se invoca el webservice a consumir
+    $wsdl="http://www3.ubilop.com/factws/IntegraCF.asmx?wsdl";
+ 
     //instanciando un nuevo objeto cliente para consumir el webservice
     $client=new nusoap_client($wsdl,'wsdl');
 
@@ -81,8 +80,12 @@
                     <pre>
                         <?php
 	                        if(isset($_POST["submit"]) && !empty($_POST["submit"])) {
+                                //se imprime la respuesta consultada al metodo
                                 print_r($resultado);
-
+                                // funcion para pocisionar el scroll al final de la pagina
+                                echo "<script language='javascript'>";
+                                echo "window.scroll({ top: 2500, left: 0, behavior: 'smooth' });";
+                                echo "</script>";
                             }else{
                                 echo "<h2>Consulte el fomulario para obtener un resultado:</h2>";
                             }

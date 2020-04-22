@@ -8,6 +8,7 @@
 
 <div class="contenedor">
     <?php
+        //se incluye el menu lateral
         include 'inc/templates/sidebar.php';
     ?>
     <main class="contenido-principal">
@@ -20,6 +21,7 @@
                 <span>Devuelve la o las etiquetas correspondientes al envío indicado.</span> 
             </h4>
         </center>
+        <!-- formulario para requerir los parametros a consultar en el webservice -->
         <form action="#" method="POST" class="agregar-tarea">
             <div class="campo">
                 <label for="tarea">Usuario:</label>
@@ -48,7 +50,8 @@
         
         
 <?php
-require_once('inc/funciones/nusoap.php');
+    //requerimos la libreria nusoap para manejo de webservice con php
+    require_once('inc/funciones/nusoap.php');
 	if(isset($_POST["submit"]) && !empty($_POST["submit"])) {
 
         //capturar parametros
@@ -58,8 +61,8 @@ require_once('inc/funciones/nusoap.php');
         $cuadrante = $_POST["cuadrante"];
         $etiqueta = $_POST["etiqueta"];
 
-           //url del webservice
-    $wsdl="http://www3.ubilop.com:8081/factws/IntegraCF.asmx?wsdl";
+    //url donde se invoca el webservice a consumir
+    $wsdl="http://www3.ubilop.com/factws/IntegraCF.asmx?wsdl";
     
     //instanciando un nuevo objeto cliente para consumir el webservice
     $client=new nusoap_client($wsdl,'wsdl');
@@ -91,8 +94,12 @@ require_once('inc/funciones/nusoap.php');
                     <pre>
                         <?php
 	                        if(isset($_POST["submit"]) && !empty($_POST["submit"])) {
-                               //imprimir el resultado de la consulta del metodo
-                                print_r($resultado);
+                               //se imprime la respuesta consultada al metodo
+                               print_r($resultado);
+                               // funcion para pocisionar el scroll al final de la pagina
+                               echo "<script language='javascript'>";
+                               echo "window.scroll({ top: 2500, left: 0, behavior: 'smooth' });";
+                               echo "</script>";
                             }else{
                                 echo "<h2>Consulte el fomulario para obtener un resultado:</h2>";
                             }

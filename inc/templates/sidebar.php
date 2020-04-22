@@ -1,19 +1,21 @@
 <aside class="contenedor-proyectos">
      <div class="panel crear-proyecto">
-        <a href="/wsphp/" class="boton">Servidor Info <i class="fas fa-plus"></i> </a>
+        <a href="" class="boton">Menu <i class="fas fa-plus"></i> </a>
     </div> 
-
-
+              <!-- enlaces que redireccionan al formulario de cada metodo -->
                 <ul style="padding:1rem;">
+                    <a href="/wsphp/">
+                        <li class="categories-metodos">Servidor Info</li>
+                    </a>
                     <a href="/wsphp/login-test.php">
                         <li class="categories-metodos">Login Test</li>
                     </a>
-                    <li class="categories-metodos">
-                        <a href="/wsphp/grabar-envio.php">Grabar Envio</a>
-                    </li>
-                    <li class="categories-metodos">
-                        <a href="/wsphp/grabar-recogida.php">Grabar Recogida</a>
-                    </li>                   
+                    <a href="/wsphp/grabar-envio.php">
+                        <li class="categories-metodos">Grabar Envio</li>
+                    </a>
+                    <a href="/wsphp/grabar-recogida.php">
+                        <li class="categories-metodos">Grabar Recogida</li>
+                    </a>                  
                     <a href="/wsphp/borrar-envio.php">
                         <li class="categories-metodos">Borrar Envio</li>
                     </a>

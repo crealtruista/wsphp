@@ -8,7 +8,8 @@
 
 <div class="contenedor">
     <?php
-        include 'inc/templates/sidebar.php';
+    //se incluye el menu lateral a la plantilla
+    include 'inc/templates/sidebar.php';
     ?>
     <main class="contenido-principal">
 
@@ -22,19 +23,18 @@
         </center>
         
     <?php
+    //requerimos la libreria nusoap para manejo de webservice con php
         require_once('inc/funciones/nusoap.php');
 
-
-           //url del webservice
-    $wsdl="http://www3.ubilop.com:8081/factws/IntegraCF.asmx?wsdl";
+    //url donde se invoca el webservice a consumir
+    $wsdl="http://www3.ubilop.com/factws/IntegraCF.asmx?wsdl";
     
     //instanciando un nuevo objeto cliente para consumir el webservice
     $client=new nusoap_client($wsdl,'wsdl');
 
     //llamando al método y pasándole el array con los parámetros
     $resultado = $client->call('ServidorInformacion');
-		
-	
+
     ?>
 
         <h2>Resultado de la Solicitud:</h2>
