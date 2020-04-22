@@ -14,7 +14,7 @@
 
          <center>
             <h1>WebService Actual: 
-                <span>Servidor Información</span>
+                <span>Servidor Información.</span>
             </h1>
             <h4>
                 <span>Devuelve información del estado actual del servidor. </span> 
