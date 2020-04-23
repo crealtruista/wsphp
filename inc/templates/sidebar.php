@@ -3,7 +3,10 @@
         <a href="" class="boton">Menu <i class="fas fa-plus"></i> </a>
     </div> 
               <!-- enlaces que redireccionan al formulario de cada metodo -->
-                <ul style="padding:1rem;">
+        <input type="checkbox" id="abrir-cerrar" name="abrir-cerrar" value="">
+            <label for="abrir-cerrar">&#9776; <span class="abrir">Abrir</span><span class="cerrar">Cerrar</span></label>
+              <div id="sidebar" class="sidebar">
+                <ul class="menu" style="padding:1rem;">
                     <a href="/wsphp/">
                         <li class="categories-metodos">Servidor Info</li>
                     </a>
@@ -47,7 +50,7 @@
                         <li class="categories-metodos">Recuperar Recogida</li>
                     </a>
                 </ul>
-
+             </div>
 
 
 </aside>
