@@ -83,15 +83,35 @@
         <h2>Resultado de la Solicitud:</h2>
             <div class="listado-pendientes">
                 <ul>
-                    <pre>
+                <center> 
+                    <table border="1" style=" border-collapse: collapse;" >
                         <?php
 	                        if(isset($_POST["submit"]) && !empty($_POST["submit"])) {
-                                //se imprime la respuesta consultada al metodo
-                                print_r($resultado);
-                                // funcion para pocisionar el scroll al final de la pagina
-                                echo "<script language='javascript'>";
-                                echo "window.scroll({ top: 2500, left: 0, behavior: 'smooth' });";
-                                echo "</script>";
+                                $result= $resultado['HistorialEstadosRecogidaResult'];
+                                //se imprime la respuesta consultada al metodo en Lista
+                                echo "<tr ><td width='15%'>1.Ok: </td><td width='85%'>";
+                                    echo $result['Ok'];
+                                echo "</td></tr>";
+
+                                echo "<tr border='1'><td width='15%'>2.Error: </td><td width='85%'>";
+                                    echo $result['CodigoError'];
+                                echo "</td></tr>";
+
+                                echo "<tr border='1'><td width='15%'>3.Info: </td><td width='85%'>";
+                                    echo $result['Info'];
+                                echo "</td></tr>";
+
+                                echo "<tr ><td width='15%'>4.Valor: </td><td width='85%'>";
+                                   if($result['Value'] == null ){}else {var_dump($result['Value']);} 
+                                echo "</td></tr></table></center> </br></br><pre> ";                              
+                                //var_dump($resultado);
+
+                               //se imprime la respuesta consultada al metodo
+                               print_r($resultado);
+                               // funcion para pocisionar el scroll al final de la pagina
+                               echo "<script language='javascript'>";
+                               echo "window.scroll({ top: 2500, left: 0, behavior: 'smooth' });";
+                               echo "</script>";
                             }else{
                                 echo "<h2>Consulte el fomulario para obtener un resultado:</h2>";
                             }

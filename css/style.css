@@ -224,9 +224,9 @@ body.index {
 /** Listado Pendientes **/
 .listado-pendientes {
     background-color: white;
-    max-width: 800px;
-    width: 90%;
-    margin: 2rem auto 0 auto;
+   /* max-width: 800px;
+    width: 90%; 
+    margin: 2rem auto 0 auto;*/
     padding: 2rem;
     border: 1px solid #e0e0e0;
 }
@@ -279,5 +279,11 @@ body.index {
 .contenedor-proyectos ul a {
     color: rgba(0,0,0,.87);
      text-decoration: none;
+}
+
+.tbl-datos {
+    border-collapse: collapse;
+    border: 1;
+    padding: 15px;
 }
 
