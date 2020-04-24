@@ -26,13 +26,16 @@
             
             <div class="campo">
                 <label for="tarea">Usuario:</label>
-                <input type="text" placeholder="Usuario" name="usuario" class="nombre-tarea" required>
+                <input type="text" placeholder="Usuario" name="usuario" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["usuario"];}?>" required>
                 <label for="tarea">Password:</label>
-                <input type="text" placeholder="Password" name="pass" class="nombre-tarea" required> 
+                <input type="text" placeholder="Password" name="pass" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["pass"];}?>" required> 
             </div>
             <div class="campo">
                 <label for="tarea">Albaran:</label>
-                <input  type="text" placeholder="Albaran" name="albaran" class="nombre-tarea" required> 
+                <input  type="text" placeholder="Albaran" name="albaran" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["albaran"];}?>" required> 
             </div>
             <div class="campo enviar">
                 <input type="submit" name="submit" class="boton nueva-tarea" value="Consultar">

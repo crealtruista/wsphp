@@ -25,15 +25,19 @@
         <form action="#" method="POST" class="agregar-tarea">
             <div class="campo">
                 <label for="tarea">Usuario:</label>
-                <input type="text" placeholder="Usuario" name="usuario" class="nombre-tarea" required> 
+                <input type="text" placeholder="Usuario" name="usuario" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["usuario"];}?>" required> 
                 <label for="tarea">Password:</label>
-                <input type="text" placeholder="Password" name="pass" class="nombre-tarea" required> 
+                <input type="text" placeholder="Password" name="pass" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["pass"];}?>" required> 
             </div>
             <div class="campo">
                 <label for="tarea">Desde:</label>
-                <input type="date" placeholder="FechaDesde" name="fdesde" class="nombre-tarea" required> 
+                <input type="date" placeholder="FechaDesde" name="fdesde" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["fdesde"];}?>" required> 
                 <label for="tarea">Hasta:</label>
-                <input type="date" placeholder="FechaHasta" name="fhasta" class="nombre-tarea" required>
+                <input type="date" placeholder="FechaHasta" name="fhasta" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["fhasta"];}?>" required>
             </div>
             <div class="campo enviar">
                 <input type="submit" name="submit" class="boton nueva-tarea" value="Consultar">

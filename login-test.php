@@ -5,14 +5,13 @@
     include 'inc/templates/header.php';
     include 'inc/templates/barra.php';
 ?>
-
 <div class="contenedor">
     <?php
     //se incluye el menu lateral
         include 'inc/templates/sidebar.php';
     ?>
     <main class="contenido-principal">
-
+    
          <center>
             <h1>WebService Actual: 
                 <span>Borrar Envio</span>
@@ -22,22 +21,22 @@
             </h4>
         </center>
         <!-- formulario para requerir los parametros a consultar en el webservice -->
-        <form action="#" method="POST" class="agregar-tarea">
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" class="agregar-tarea">
             <div class="campo">
                 <label for="tarea">Usuario:</label>
-                <input type="text" placeholder="Usuario" name="usuario" class="nombre-tarea" required> 
+                <input type="text" placeholder="Usuario *" name="usuario" id="usuario" 
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["usuario"];}?>" class="nombre-tarea" required> 
             </div>
             <div class="campo">
                 <label for="tarea">Password:</label>
-                <input type="text" placeholder="Password" name="pass" class="nombre-tarea" required> 
+                <input type="text" placeholder="Password" name="pass" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["pass"];}?>" required> 
             </div>
             <div class="campo enviar">
                 <input type="submit" name="submit" class="boton nueva-tarea" value="Consultar">
             </div>
         </form>
-        
-        
-<?php
+        <?php
 //requerimos la libreria nusoap para manejo de webservice con php
 require_once('inc/funciones/nusoap.php');
 	if(isset($_POST["submit"]) && !empty($_POST["submit"])) {
@@ -68,9 +67,10 @@ require_once('inc/funciones/nusoap.php');
         die();
     }
     
-
 	}
 ?>
+        
+
 
         <h2>Resultado de la Solicitud:</h2>
             <div class="listado-pendientes">
@@ -80,7 +80,7 @@ require_once('inc/funciones/nusoap.php');
 	                        if(isset($_POST["submit"]) && !empty($_POST["submit"])) {
                                 //se imprime la respuesta consultada al metodo
                                 print_r($resultado);
-                                // funcion para pocisionar el scroll al final de la pagina
+                                // funcion para pocisionar el scroll al final de la pagina                               
                                 echo "<script language='javascript'>";
                                 echo "window.scroll({ top: 2500, left: 0, behavior: 'smooth' });";
                                 echo "</script>";

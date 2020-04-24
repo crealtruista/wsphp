@@ -25,15 +25,19 @@
         <form action="#" method="POST" class="agregar-tarea">
             <div class="campo">
                 <label for="tarea">Usuario:</label>
-                <input type="text" placeholder="Usuario" name="usuario" class="nombre-tarea" required> 
+                <input type="text" placeholder="Usuario" name="usuario" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["usuario"];}?>" required> 
                 <label for="tarea">Password:</label>
-                <input type="text" placeholder="Password" name="pass" class="nombre-tarea" required> 
+                <input type="text" placeholder="Password" name="pass" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["pass"];}?>" required> 
             </div>
             <div class="campo">
                 <label for="tarea">Recogida #:</label>
-                <input type="text" placeholder="Recogida Numero" name="recogida" class="nombre-tarea" required> 
+                <input type="text" placeholder="Recogida Numero" name="recogida" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["recogida"];}?>" required> 
                 <label for="tarea">Cuadrante:</label>
-                <input type="text" placeholder="Cuadrante Inicial" name="cuadrante" class="nombre-tarea" required>
+                <input type="text" placeholder="Cuadrante Inicial" name="cuadrante" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["cuadrante"];}?>" required>
             </div>
             <center><div class="">
                 <label for="tarea">Etiqueta Termica:</label>

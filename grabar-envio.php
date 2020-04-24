@@ -7,7 +7,7 @@
 ?>
 
 <div class="contenedor">
-    <?
+    <?php
     //se incluye el menu lateral
         include 'inc/templates/sidebar.php';
     ?>
@@ -23,78 +23,103 @@
         <form action="#" method="POST" class="agregar-tarea1">
             <div class="campo1">
                 <label for="">  </label>
-                <input type="text" placeholder="Usuario *" name="usuario" class="nombre-tarea" required> 
+                <input type="text" placeholder="Usuario *" name="usuario" class="nombre-tarea" 
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["usuario"];}?>"  required> 
                 <label for="">  </label>
-                <input type="text" placeholder="Password *" name="pass" class="nombre-tarea" required> 
+                <input type="text" placeholder="Password *" name="pass" class="nombre-tarea" 
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["pass"];}?>" required> 
                 <label for="">  </label>
-                <input type="text" placeholder="Albaran Numero *" name="albaran" class="nombre-tarea" required>
+                <input type="text" placeholder="Albaran Numero *" name="albaran" class="nombre-tarea" 
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["albaran"];}?>" required>
                 <label for="">  </label>
-                <input type="text" placeholder="DepartamentoCod" name="dcode" class="nombre-tarea">
+                <input type="text" placeholder="DepartamentoCod" name="dcode" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["dcode"];}?>">
                 <label for="">  </label>
-                <input type="text" placeholder="Articulo Codigo *" name="acode" class="nombre-tarea" required> 
+                <input type="text" placeholder="Articulo Codigo *" name="acode" class="nombre-tarea" 
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["acode"];}?>" required> 
             </div>
 
              <div class="campo1">
                 <label for=""></label>
-                <input type="date" placeholder="Fecha Salida *" name="fecha" class="nombre-tarea" required> 
+                <input type="date" placeholder="Fecha Salida *" name="fecha" class="nombre-tarea" 
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["fecha"];}?>" required> 
                 <label for="">  </label>
-                <input type="text" placeholder="Observaciones" name="observa" class="nombre-tarea" > 
+                <input type="text" placeholder="Observaciones" name="observa" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["observa"];}?>" > 
                 <label for="">  </label>
-                <input type="text" placeholder="Referencia 1" name="refe1" class="nombre-tarea">
+                <input type="text" placeholder="Referencia 1" name="refe1" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["refe1"];}?>">
                 <label for="">  </label>
-                <input type="text" placeholder="Referencia 2" name="refe2" class="nombre-tarea">
+                <input type="text" placeholder="Referencia 2" name="refe2" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["refe2"];}?>">
                 <label for="">  </label>
-                <input type="text" placeholder="Nombre Destinatario*" name="dnombre" class="nombre-tarea" required> 
+                <input type="text" placeholder="Nombre Destinatario*" name="dnombre" class="nombre-tarea" 
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["dnombre"];}?>" required> 
             </div>
 
             <div class="campo1">
                 <label for="">  </label>
-                <input type="text" placeholder="Vía Destinatario" name="dvia" class="nombre-tarea"> 
+                <input type="text" placeholder="Vía Destinatario" name="dvia" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["dvia"];}?>"> 
                 <label for="">  </label>
-                <input type="text" placeholder="Direccion Destino*" name="ddes" class="nombre-tarea" required> 
+                <input type="text" placeholder="Direccion Destino *" name="ddes" class="nombre-tarea" 
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["ddes"];}?>"required> 
                 <label for="">  </label>
-                <input type="text" placeholder="Numero Destinatario" name="dnum" class="nombre-tarea" required>
+                <input type="text" placeholder="Numero Destinatario" name="dnum" class="nombre-tarea" 
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["dnum"];}?>">
                 <label for="">  </label>
-                <input type="text" placeholder="Piso Destinatario" name="dpis" class="nombre-tarea">
+                <input type="text" placeholder="Piso Destinatario" name="dpis" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["dpis"];}?>">
                 <label for="">  </label>
-                <input type="text" placeholder="Población Destino *" name="dpob" class="nombre-tarea" required> 
+                <input type="text" placeholder="Población Destino *" name="dpob" class="nombre-tarea" 
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["dpob"];}?>"required> 
             </div>
 
             <div class="campo1">
                 <label for="">  </label>
-                <input type="text" placeholder="Codigo Postal *" name="codep" class="nombre-tarea" required> 
+                <input type="text" placeholder="Codigo Postal *" name="codep" class="nombre-tarea" 
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["codep"];}?>" required> 
                 <label for="">  </label>
-                <input type="text" placeholder="Pais" name="dpais" class="nombre-tarea"> 
+                <input type="text" placeholder="Pais" name="dpais" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["dpais"];}?>"> 
                 <label for="">  </label>
-                <input type="text" placeholder="Telefono" name="dtelf" class="nombre-tarea" >
+                <input type="text" placeholder="Telefono" name="dtelf" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["dtelf"];}?>" >
                 <label for="">  </label>
-                <input type="text" placeholder="Email" name="demail" class="nombre-tarea">
+                <input type="text" placeholder="Email" name="demail" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["demail"];}?>">
                 <label for="">  </label>
-                <input type="text" placeholder="Persona Contacto" name="dcont" class="nombre-tarea" > 
+                <input type="text" placeholder="Persona Contacto" name="dcont" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["dcont"];}?>" > 
             </div>
 
             <div class="campo1">
                 <label for="">  </label>
                 <input type="text" placeholder="Identificacion D " name="dide" class="nombre-tarea"> 
                 <label for="tarea"></label>
-                <select name="ride" required>
+                <select name="ride"  required>
                     <option value="true" selected>IdenticaciónRequerida</option> 
                     <option value="true" >Si</option> 
                     <option value="false">No</option>
                 </select>
                 <label for="">  </label>
-                <input type="number"  step="0.01" placeholder="Alto 0.00" name="alto" class="nombre-tarea" >
+                <input type="number"  step="0.01" placeholder="Alto 0.00" name="alto" class="nombre-tarea" 
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["alto"];}?>" >
                 <label for="">  </label>
-                <input type="number"  step="0.01" placeholder="Ancho 0.00" name="ancho" class="nombre-tarea" >
+                <input type="number"  step="0.01" placeholder="Ancho 0.00" name="ancho" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["ancho"];}?>" >
                 <label for="">  </label>
-                <input type="number" placeholder="Largo 0.00" step="0.01" name="largo" class="nombre-tarea" > 
+                <input type="number" placeholder="Largo 0.00" step="0.01" name="largo" class="nombre-tarea"
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["largo"];}?>" > 
             </div>
 
             <div class="campo1">
                 <label for="">  </label>
-                <input type="number" placeholder="Bultos " name="bultos" class="nombre-tarea" required > 
+                <input type="number" placeholder="Bultos " name="bultos" class="nombre-tarea" 
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["bultos"];}?>" required > 
                 <label for="">  </label>
-                <input type="number"  step="0.01" placeholder="Peso 0.00" name="peso" class="nombre-tarea" >
+                <input type="number"  step="0.01" placeholder="Peso 0.00" name="peso" class="nombre-tarea" 
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["peso"];}?>" required >
                 <label for="tarea"></label>
                 <select name="portes" required>
                     <option value="true" selected>Portes Debido </option> 
@@ -142,7 +167,7 @@
                 </select>
                 <label for="tarea"></label>
                 <select name="ealba" required>
-                    <option value="true" selected>EscaneoAlbaranCliente</option> 
+                    <option value= "<?php if(isset($_POST['submit'])) {echo $_POST["ealba"];}else{echo "true";}?>"  selected>EscaneoAlbaranCliente</option> 
                     <option value="true" >Si</option> 
                     <option value="false">No</option>
                 </select> 
@@ -150,9 +175,11 @@
 
             <div class="campo1">
                 <label for="">  </label>
-                <input type="number" step="0.01" placeholder="Reembolso 0.00" name="reembolso" class="nombre-tarea" > 
+                <input type="number" step="0.01" placeholder="Reembolso 0.00" name="reembolso" class="nombre-tarea" 
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["reembolso"];}?>"> 
                 <label for="">  </label>
-                <input type="number"  step="0.01" placeholder="Valor 0.00" name="valor" class="nombre-tarea" >
+                <input type="number"  step="0.01" placeholder="Valor 0.00" name="valor" class="nombre-tarea" 
+                value= "<?php if(isset($_POST['submit'])) {echo $_POST["valor"];}?>">
                 <label for="tarea"></label>
                 <select name="venvio" required>
                     <option value="true" selected>Valorar Envio </option> 
@@ -180,6 +207,32 @@ require_once('inc/funciones/nusoap.php');
         $dcode = $_POST["dcode"];
         $acode = $_POST["acode"];
 
+        if ($_POST['alto'] == ""){
+            $alto = "0";
+        }else{
+            $alto = $_POST['alto'];           
+        }
+        if ($_POST['ancho'] == ""){
+            $ancho = "0";
+        }else{
+            $ancho = $_POST['ancho'];           
+        }
+        if ($_POST['largo'] == ""){
+            $largo = "0";
+        }else{
+            $largo = $_POST['largo'];           
+        }
+        if ($_POST['reembolso'] == ""){
+            $reembolso = "0";
+        }else{
+            $reembolso = $_POST['reembolso'];           
+        }
+        if ($_POST['valor'] == ""){
+            $valor = "0";
+        }else{
+            $valor = $_POST['valor'];           
+        }
+
     //url donde se invoca el webservice a consumir
     $wsdl="http://www3.ubilop.com/factws/IntegraCF.asmx?wsdl";
     
@@ -193,12 +246,12 @@ require_once('inc/funciones/nusoap.php');
     '_DNombre' => $_POST["dnombre"], '_DVia' => $_POST["dvia"], '_DDireccion' => $_POST["ddes"], '_DNumero' => $_POST["dnum"], 
     '_DPiso' => $_POST["dpis"], '_DPoblacion' => $_POST["dpob"], '_DCodigoPostal' => $_POST["codep"], '_DPais' => $_POST["dpais"],
     '_DTelefono' => $_POST["dtelf"], '_DEmail' => $_POST["demail"], '_DContacto' => $_POST["dcont"], 
-    '_DIdentificacion' => $_POST["dide"], '_DIdentificacionRequerida' => $_POST["ride"], '_Alto' => $_POST["alto"], 
-    '_Ancho' => $_POST["ancho"], '_Largo' => $_POST["largo"], '_Bultos' => $_POST["bultos"], '_Peso' => $_POST["peso"],
+    '_DIdentificacion' => $_POST["dide"], '_DIdentificacionRequerida' => $_POST["ride"], '_Alto' => $alto, 
+    '_Ancho' => $ancho, '_Largo' => $largo, '_Bultos' => $_POST["bultos"], '_Peso' => $_POST["peso"],
     '_PortesDebido' => $_POST["portes"], '_SabadoEntrega' => $_POST["sabe"], '_AcuseCon' => $_POST["acuse"], 
     '_RetornoCon' => $_POST["retorno"], '_GestionOrigen' => $_POST["gori"], '_GestionDestino' => $_POST["gdes"], 
-    '_EnvioControlCon' => $_POST["econ"], '_EscaneoAlbaranClienteCon' => $_POST["ealba"], '_Reembolso' => $_POST["reembolso"],
-    '_Valor' => $_POST["valor"], '_ValorarEnvio' => $_POST["venvio"]);
+    '_EnvioControlCon' => $_POST["econ"], '_EscaneoAlbaranClienteCon' => $_POST["ealba"], '_Reembolso' => $reembolso,
+    '_Valor' => $valor, '_ValorarEnvio' => $_POST["venvio"]);
 
     //llamando al método y pasándole el array con los parámetros
     $resultado = $client->call('GrabarEnvio', $param);
