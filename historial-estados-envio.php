@@ -102,9 +102,30 @@
                                 echo "</td></tr>";
 
                                 echo "<tr ><td width='15%'>4.Valor: </td><td width='85%'>";
-                                    var_dump($result['Value']);
+                                // Validamos si Value viene con datos 
+                                    if (isset($result['Value']['EstadoInfoWSVO'])){ 
+                                        $result1=$result['Value']['EstadoInfoWSVO']; 
+                                        // Expresion que valida si el WSVO es un conjunto de Array
+                                        if($result1[0] == null) {
+                                            
+                                            echo $result1['FechaHora']."<br>";
+                                            echo $result1['Estado']."<br>";                                   
+                                            echo $result1['DetalleEstado']."<br>";
+                                            echo "<br>"."<br>";	
+
+                                         } else { 
+                                             // ciclo que recorre el cunjuto de array     
+                                            for($i=0;$i<count($result1);$i++){
+                                                echo $result1[$i]['FechaHora']."<br>";
+                                                echo $result1[$i]['Estado']."<br>";                                   
+                                                echo $result1[$i]['DetalleEstado']."<br>";
+                                                echo "<br>"."<br>";	
+                                            }
+                                        } 
+                                    }
+
                                 echo "</td></tr></table></center> </br></br><pre> ";                              
-                                //var_dump($resultado);
+                                //var_dump($result['Value']);
 
                                //se imprime la respuesta consultada al metodo
                                print_r($resultado);

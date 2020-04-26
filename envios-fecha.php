@@ -104,9 +104,41 @@
                                 echo "</td></tr>";
 
                                 echo "<tr ><td width='15%'>4.Valor: </td><td width='85%'>";
-                                    var_dump($result['Value']);
-                                echo "</td></tr></table></center> </br></br><pre> ";                              
-                                //var_dump($resultado);
+                                    // Validamos si Value viene con datos 
+                                    if (isset($result['Value']['EnvioInfoWSVO'])){ 
+                                        $result1=$result['Value']['EnvioInfoWSVO']; 
+                                        // Expresion que valida si el WSVO es un conjunto de Array
+                                        if($result1[0] == null) {
+                                            
+                                                echo $result1['Fecha']."<br>";
+                                                echo $result1['AlbaranNumero']."<br>";
+                                                if ($result1['Referencia1'] != ""){
+                                                    echo $result1['Referencia1']."<br>";
+                                                }
+                                                if ($result1['Referencia2'] != ""){
+                                                    echo $result1['Referencia2']."<br>";
+                                                }
+                                                echo $result1['Estado']."<br>";
+                                                echo "<br>"."<br>";
+
+                                         } else { 
+                                             // ciclo que recorre el cunjuto de array      
+                                                for($i=0;$i<count($result1);$i++){
+                                                echo $result1[$i]['Fecha']."<br>";
+                                                echo $result1[$i]['AlbaranNumero']."<br>";
+                                                if ($result1[$i]['Referencia1'] != ""){
+                                                    echo $result1[$i]['Referencia1']."<br>";
+                                                }
+                                                if ($result1[$i]['Referencia2'] != ""){
+                                                    echo $result1[$i]['Referencia2']."<br>";
+                                                }
+                                                echo $result1[$i]['Estado']."<br>";
+                                                echo "<br>"."<br>";	
+                                                }
+                                        } 
+                                    }
+                                                           
+                                echo "</td></tr></table></center> </br></br><pre> "; 
 
                                //se imprime la respuesta consultada al metodo
                                print_r($resultado);

@@ -112,7 +112,10 @@
                                 echo "</td></tr>";
 
                                 echo "<tr ><td width='15%'>4.Valor: </td><td width='85%'>";
-                                    var_dump($result['Value']);
+                                if (isset($result['Value'])){ 
+                                    $result1=$result['Value']; 
+                                    var_dump($result1);
+                                }
                                 echo "</td></tr></table></center> </br></br><pre> ";                              
                                 //var_dump($resultado);
 
