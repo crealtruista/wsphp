@@ -110,12 +110,23 @@
                                 echo "<tr border='1'><td width='15%'>3.Info: </td><td width='85%'>";
                                     echo $result['Info'];
                                 echo "</td></tr>";
-
-                                echo "<tr ><td width='15%'>4.Valor: </td><td width='85%'>";
+                                       // Validamos si Value viene con datos 
                                 if (isset($result['Value'])){ 
                                     $result1=$result['Value']; 
-                                    var_dump($result1);
-                                }
+                                    echo "<tr border='1'><td width='25%'>4.Value: </td><td width='75%'>";
+                                        echo gettype($result['Value']);
+                                    echo "</td></tr>";
+                                    //ciclo for que recorre array asociativo e imprime cada llave y valor del objeto Value
+                                    for($i=0;$i<count($result1);$i++){
+                                        current($result1);
+                                        echo "<tr border='1'><td width='25%'>";
+                                        echo key($result1); 
+                                        echo "</td><td width='75%'>";
+                                            echo $result1[key($result1)];
+                                        echo "</td></tr>";
+                                        next($result1);                                      
+                                    }
+                                }  
                                 echo "</td></tr></table></center> </br></br><pre> ";                              
                                 //var_dump($resultado);
 

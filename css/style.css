@@ -295,5 +295,15 @@ input[type=text],[type=date],[type=number]{
     box-sizing: border-box;
     resize: vertical;
   }
+
+.table {
+	 border-collapse: separate;
+	 border-spacing: 10px;
+     empty-cells: hide;
+     padding: 2px; 
+}
+td {
+	 padding: 2px;
+}
   
 

@@ -111,6 +111,14 @@
 
                                 echo "<tr border='1'><td width='15%'>3.Info: </td><td width='85%'>";
                                     echo $result['Info'];
+                                echo "</td></tr>";
+
+                                echo "<tr border='1'><td width='15%'>4.Value: </td><td width='85%'>";
+                                $value = $result['Value'];
+                                    if($value != null){
+                                        echo "<a href='$value' target='_blank'>".$value."</a></br></br>";
+                                        echo "<iframe width='100%' height='400' src='$value'> </iframe></br></br>";
+                                    }
                                 echo "</td></tr></table></center> </br></br><pre> ";                              
                                 //var_dump($resultado);
 

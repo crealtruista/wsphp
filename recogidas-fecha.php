@@ -104,41 +104,54 @@ require_once('inc/funciones/nusoap.php');
                                     echo $result['Info'];
                                 echo "</td></tr>";
 
-                                echo "<tr ><td width='15%'>4.Valor: </td><td width='85%'>";
+                                echo "<tr border='1'><td width='25%'>4.Value: </td><td width='75%'>";
+                                        echo gettype($result['Value']);
+                                echo "</td></tr></table> </br></br> ";
+
+                                
                                     // Validamos si Value viene con datos 
                                     if (isset($result['Value']['RecogidaInfoWSVO'])){ 
                                         $result1=$result['Value']['RecogidaInfoWSVO']; 
+                                        echo "<table border='1' style=' border-collapse: collapse;' >
+                                            <tr border='1'><td width='20%'>Fecha: </td>
+                                            <td width='20%'>Recogida Numero </td><td width='20%'>Referencia1 </td>
+                                            <td width='20%'>Referencia2 </td><td width='20%'>Estado </td></tr>";
                                         // Expresion que valida si el WSVO es un conjunto de Array
-                                        if($result1[0] == null) {
-                                            
-                                                echo $result1['FechaRecogida']."<br>";
-                                                echo $result1['RecogidaNumero']."<br>";
-                                                if ($result1['Referencia1'] != ""){
-                                                    echo $result1['Referencia1']."<br>";
-                                                }
-                                                if ($result1['Referencia2'] != ""){
-                                                    echo $result1['Referencia2']."<br>";
-                                                }
-                                                echo $result1['Estado']."<br>";
-                                                echo "<br>"."<br>";
+                                        if($result1[0] == null) {                                                                                                                                
+                                                echo "<tr border='1'><td width='20%'>".$result1['FechaRecogida']."</td>";
+                                                echo "<td width='20%'>".$result1['RecogidaNumero']."</td>";
+                                                echo "<td width='20%'>"; 
+                                                        if ($result1['Referencia1'] != ""){
+                                                           echo $result1['Referencia1'];
+                                                        } 
+                                                    echo "</td>";
+                                                    echo "<td width='20%'>"; 
+                                                        if ($result1['Referencia2'] != ""){
+                                                           echo $result1['Referencia2'];
+                                                        }
+                                                echo "<td width='20%'>".$result1['Estado']."</td></tr>";
 
-                                         } else {  
-                                             // ciclo que recorre el cunjuto de array     
-                                               for($i=0;$i<count($result1);$i++){
-                                                echo $result1[$i]['FechaRecogida']."<br>";
-                                                echo $result1[$i]['RecogidaNumero']."<br>";
-                                                if ($result1[$i]['Referencia1'] != ""){
-                                                    echo $result1[$i]['Referencia1']."<br>";
+                                         } else { 
+                                             // ciclo que recorre el cunjuto de array      
+                                                for($i=0;$i<count($result1);$i++){
+                                                    echo "<tr border='1'><td width='20%'>".$result1[$i]['FechaRecogida']."</td>";
+                                                    echo "<td width='20%'>".$result1[$i]['RecogidaNumero']."</td>";
+                                                    echo "<td width='20%'>"; 
+                                                        if ($result1[$i]['Referencia1'] != ""){
+                                                           echo $result1[$i]['Referencia1'];
+                                                        } 
+                                                    echo "</td>";
+                                                    echo "<td width='20%'>"; 
+                                                        if ($result1[$i]['Referencia2'] != ""){
+                                                           echo $result1[$i]['Referencia2'];
+                                                        } 
+                                                    echo "</td>";
+                                                    echo "<td width='20%'>".$result1[$i]['Estado']."</td></tr>";	
                                                 }
-                                                if ($result1[$i]['Referencia2'] != ""){
-                                                    echo $result1[$i]['Referencia2']."<br>";
-                                                }
-                                                echo $result1[$i]['Estado']."<br>";
-                                                echo "<br>"."<br>";	
-                                                }
-                                            } 
+                                        } 
                                     }
-                                echo "</td></tr></table></center> </br></br><pre> ";                              
+                                                           
+                                echo "</table></center> </br></br><pre> ";                              
 
                                //se imprime la respuesta consultada al metodo
                                print_r($resultado);

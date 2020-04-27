@@ -101,29 +101,41 @@
                                     echo $result['Info'];
                                 echo "</td></tr>";
 
-                                echo "<tr ><td width='15%'>4.Valor: </td><td width='85%'>";
-                                // Validamos si Value viene con datos 
-                                if (isset($result['Value']['EstadoInfoWSVO'])){ 
-                                    $result1=$result['Value']['EstadoInfoWSVO']; 
-                                    // Expresion que valida si el WSVO es un conjunto de Array
-                                    if($result1[0] == null) {
-                                        
-                                        echo $result1['FechaHora']."<br>";
-                                        echo $result1['Estado']."<br>";                                   
-                                        echo $result1['DetalleEstado']."<br>";
-                                        echo "<br>"."<br>";	
+                                echo "<tr border='1'><td width='25%'>4.Value: </td><td width='75%'>";
+                                    echo gettype($result['Value']);
+                                echo "</td></tr></table> </br></br> ";
+                        
+                            // Validamos si Value viene con datos 
+                            if (isset($result['Value']['EstadoInfoWSVO'])){ 
+                                $result1=$result['Value']['EstadoInfoWSVO']; 
+                                echo "<table border='1' style=' border-collapse: collapse;' >
+                                    <tr border='1'><td width='20%'>Fecha Hora: </td>
+                                    <td width='20%'>Estado </td><td width='20%'>Detalle Estado </td></tr>";
+                                // Expresion que valida si el WSVO es un conjunto de Array
+                                if($result1[0] == null) {                                                                                                                                
+                                        echo "<tr border='1'><td width='20%'>".$result1['FechaHora']."</td>";
+                                        echo "<td width='20%'>".$result1['Estado']."</td>";
+                                        echo "<td width='20%'>";
+                                            if ($result1['DetalleEstado'] != ""){
+                                             echo $result1['DetalleEstado'];
+                                         }
+                                         echo "</td></tr>";
 
-                                     } else { 
-                                         // ciclo que recorre el cunjuto de array     
+                                 } else { 
+                                     // ciclo que recorre el cunjuto de array      
                                         for($i=0;$i<count($result1);$i++){
-                                            echo $result1[$i]['FechaHora']."<br>";
-                                            echo $result1[$i]['Estado']."<br>";                                   
-                                            echo $result1[$i]['DetalleEstado']."<br>";
-                                            echo "<br>"."<br>";	
+                                        echo "<tr border='1'><td width='20%'>".$result1[$i]['FechaHora']."</td>";
+                                        echo "<td width='20%'>".$result1[$i]['Estado']."</td>";
+                                        echo "<td width='20%'>";
+                                            if ($result1[$i]['DetalleEstado'] != ""){
+                                             echo $result1[$i]['DetalleEstado'];
+                                         }
+                                         echo "</td></tr>";
                                         }
-                                    } 
-                                }
-                                echo "</td></tr></table></center> </br></br><pre> ";                              
+                                } 
+                            }
+                                                   
+                        echo "</table></center> </br></br><pre> ";                              
                                 //var_dump($resultado);
 
                                //se imprime la respuesta consultada al metodo
