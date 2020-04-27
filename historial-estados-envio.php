@@ -100,10 +100,10 @@
                                 echo "<tr border='1'><td width='15%'>3.Info: </td><td width='85%'>";
                                     echo $result['Info'];
                                 echo "</td></tr>";
+                                
                                 echo "<tr border='1'><td width='25%'>4.Value: </td><td width='75%'>";
-                                echo gettype($result['Value']);
-                        echo "</td></tr></table> </br></br> ";
-
+                                    echo gettype($result['Value']);
+                                echo "</td></tr></table> </br></br> ";
                         
                             // Validamos si Value viene con datos 
                             if (isset($result['Value']['EstadoInfoWSVO'])){ 
