@@ -43,6 +43,12 @@
                     <a href="/wsphp/historial-estados-recogida.php">
                         <li class="categories-metodos">Historial Estados Recogida</li>
                     </a>
+                    <a href="/wsphp/historial-estados-envio-fecha.php">
+                        <li class="categories-metodos">Historial Estados Envio Fecha</li>
+                    </a>
+                    <a href="/wsphp/historial-estados-recogida-fecha.php">
+                        <li class="categories-metodos">Historial Estados Recogida Fecha</li>
+                    </a>
                     <a href="/wsphp/recuperar-envio.php">
                         <li class="categories-metodos">Recuperar Envio</li>
                     </a>
